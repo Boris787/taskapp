@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^2.6.12"
+    "uuidv4": "^6.2.6",
+    "vue": "^2.6.12",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.11",
