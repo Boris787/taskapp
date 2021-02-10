@@ -41,12 +41,11 @@ const actions = {
 
 const mutations = {
   setTasks: (state, tasks) => state.tasks = tasks,
-  newTask: (state, task) => state.task = task,
+  newTask: (state, task) => state.tasks.push(task),
   updTask: (state, updatedTask) => {
     const index = state.tasks.findIndex(t => t.id === updatedTask.id);
     if(index !== -1) {
-      /**Splice Problem!!! */
-      state.tasks.splice(index, 1, updatedTask);
+      state.tasks.splice(index, 1, updatedTask, splice);
     }
   },
   delTask: (state, task) => state.tasks = state.tasks.filter(t => t.id !== task.id)

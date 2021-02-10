@@ -2,7 +2,7 @@
   <div class="task-item" v-bind:class="{'is-complete':task.completed}">
     <input type="checkbox" v-on:change="markComplete">
       {{ task.title }}
-    <button @click="deleteTask">Delete Task</button>
+    <button @click="deleteTask">Delete</button>
   </div>
 </template>
 
@@ -13,14 +13,9 @@ export default {
   name: "Task",
   props: ["task"],
   methods: {
-    ...mapActions(['removeTask', 'updateTask']),
+    ...mapActions(['removeTask']),
     markComplete() {
-      const updatedTask = {
-        id: this.task.id,
-        name: this.task.name,
-        completed: !this.task.completed
-      }
-      this.updateTask(updatedTask);
+      this.task.completed = !this.task.completed;
     },
     deleteTask() {
       this.removeTask(this.task);

@@ -2,7 +2,7 @@
   <div>
     <form @submit="onSubmit">
       <input type="text" v-model="name" name="name" placeholder="Add Task">
-      <input type="submit" value="Add Task" class="btn"> 
+      <input type="submit" value="Add Task" class="btn">
     </form>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   name: "AddTask",
   data() {
     return {
-      title: ''
+      name: ''
     }
   },
   methods: {
@@ -23,8 +23,8 @@ export default {
     onSubmit(e) {
       e.preventDefault();
       const task = {
-        id: uuid.v4(),
-        title: this.name,
+        id:  uuid.v4(),
+        name: this.name,
         completed: false
       }
       this.addTask(task);
